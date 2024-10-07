@@ -13,7 +13,7 @@ class UpdateProjectRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,21 @@ class UpdateProjectRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'name' => 'required|max:200',
+            'slug' => 'required|max:255'
+
         ];
     }
+
+        public function messages(){
+            return[
+                "name.required" => "il nome e' obbigatorio",
+                "name.max" => "il nome del progetto deve essere lungo al massimo :max caratteri",
+                "slug.required" => "Lo slug e' obbigatorio",
+                "slug.max" => "Lo slug del progetto deve essere lungo al massimo :max caratteri",
+            ];
+        }
 }
