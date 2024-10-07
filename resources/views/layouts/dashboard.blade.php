@@ -13,8 +13,11 @@
     </div>
     <div id="content">
         <header>
-            
+
         </header>
+        <main>
+            
+        </main>
     </div>
 </body>
 </html>
