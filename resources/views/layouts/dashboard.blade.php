@@ -9,6 +9,9 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
+    <div class="d-flex">
+        @include('partials.sidebar')
+    </div>
     <div id="content">
         @include('partials.header')
         <main>
