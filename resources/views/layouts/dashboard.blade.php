@@ -9,8 +9,6 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
-    <div id="sidebar">
-    </div>
     <div id="content">
         @include('partials.header')
         <main>
