@@ -27,9 +27,20 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'name' => 'required|max:200',
+            'slug' => 'required|max:255'
+
         ];
+    }
+
+        public function messages(){
+            return[
+                "name.required" => "il nome e' obbigatorio",
+                "name.max" => "il nome del progetto deve essere lungo al massimo :max caratteri",
+                "slug.required" => "Lo slug e' obbigatorio",
+                "slug.max" => "Lo slug del progetto deve essere lungo al massimo :max caratteri",
+            ];
+        }
     }
 
     /**
