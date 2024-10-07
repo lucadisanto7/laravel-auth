@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Htt\Controllers\Admin\ProjectController as ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,8 @@ Route::middleware(['auth, verified'])->prefix('admin')->name('admin.')->group(fu
     Route::get('/', function(){
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('/projects', ProjectController::class);
 });
 
 Route::middleware('auth')->group(function () {
