@@ -3,7 +3,7 @@
     <div class="conainer-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex">
+                <div class="d-flex align-items-center justify-content-between">
                     <h2>Elenco Progetti</h2>
                     <a href="" class="btn btn-sm btn-primary">Aggiungi progetto</a>
                 </div>
