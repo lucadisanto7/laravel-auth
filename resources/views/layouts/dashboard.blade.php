@@ -12,9 +12,9 @@
     <div id="sidebar">
     </div>
     <div id="content">
-        
+        @include('partials.header')
         <main>
-
+            @yield('main-content')
         </main>
     </div>
 </body>
