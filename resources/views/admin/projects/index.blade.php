@@ -48,4 +48,5 @@
             </div>
         </div>
     </div>
+    @include('admin.projects.partials.modal_delete')
 @endsection
