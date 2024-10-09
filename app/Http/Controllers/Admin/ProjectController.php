@@ -42,7 +42,7 @@ class ProjectController extends Controller
     {
         $form_data = $request->validated();
         $project = new Project();
-        $form_data['slug']=Project::generateSlug($form_data['title'], '-');
+        $form_data['slug']=Project::generateSlug($form_data['name'], '-');
         $project->fill($form_data);
         $project->save();
         return redirect()->route('admin.projects.index');
@@ -67,7 +67,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
