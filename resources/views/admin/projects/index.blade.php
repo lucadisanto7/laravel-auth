@@ -35,7 +35,7 @@
                                         <form action="{{route('admin.projects.destroy', ['project' => $project->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger delete-project">
+                                            <button type="submit" class="btn btn-sm btn-danger delete-project" onclick="return confirm('Sei sicuro(a) di volet cancellare questo progetto?')">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
