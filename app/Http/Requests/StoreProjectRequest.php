@@ -25,7 +25,9 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'name' => 'required|max:200',
-            'slug' => 'max:255'
+            'slug' => 'max:255',
+            'image' => 'nullable|image|max:4084',
+            'summary' => 'nullable',
 
         ];
     }
@@ -34,6 +36,8 @@ class StoreProjectRequest extends FormRequest
             return[
                 "name.required" => "il nome e' obbigatorio",
                 "name.max" => "il nome del progetto deve essere lungo al massimo :max caratteri",
+                "image.image" => 'Il file deve essere un\' immagine valida',
+                "image.max" => "il file deve essere grande al massimo :max kb"
             ];
         }
 }
