@@ -27,6 +27,10 @@
                         @enderror 
                         </div>
                         <div class="col-12">
+                            <label for="" class="control-label">Immagine</label>
+                            <input type="file" name="image" id="image" class="form-control form-control-sm" >
+                        </div>
+                        <div class="col-12">
                             <label for="" class="control-label">Sommario Progetto</label>
                             <textarea name="summary" id="" cols="30" rows="10" class="form-control form-control-sm" >{{ old('summary','summary')}}</textarea>
                         </div>
