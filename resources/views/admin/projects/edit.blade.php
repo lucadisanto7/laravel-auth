@@ -13,7 +13,7 @@
                     </ul>
                 </div>
                 @endif
-                <form action="{{ route('admin.projects.update', ['project' => $project->id])}}" method="POST">
+                <form action="{{ route('admin.projects.update', ['project' => $project->id])}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -25,6 +25,13 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+                    <div class="col-12">
+                        @if ($project->image != null)
+                            <img class="project-image" src="{{ asset('./storage/'.$project->image)}}" alt="{{ $project->name}}">
+                        @else
+                            <img src="https://plachehold.co/600x400?text=Immagine+copertina" alt="{{$project->name}}">
+                        @endif
+                    </div>    
                     <div class="col-12">
                         <label for="" class="control-label">Sommario progetto</label>
                         <input type="text" name="name" id="" class="form-control form-control-sm" 
